@@ -35,5 +35,12 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.on('eleventy.after', () => {
 		console.log('[pagefind] Creating search index.');
 		execSync(`npx pagefind --source _site --glob \"[0-9]*/**/*.html\"`, { encoding: 'utf-8' });
-  });
+	});
+
+	// Set base folder
+	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+
+	return {
+		pathPrefix: "/entroponauta.twitter/"
+	};
 };
