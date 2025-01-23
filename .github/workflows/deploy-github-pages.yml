@@ -26,4 +26,4 @@ jobs:
           jekyll: false
           keep_history: true # If you don't want to preserve a commit history, set to false to perform a git push --force
         env:
-            GITHUB_TOKEN: $ # This secret is available by default
+            GITHUB_TOKEN: ${{ secrets.PAT }}
